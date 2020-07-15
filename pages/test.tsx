@@ -10,7 +10,7 @@ interface State {
 }
 
 export default class Test extends React.Component<Props, State> {
-    state = { inputval: "__init" };
+  state = { inputval: "__init" };
   static async getInitialProps(context) {
     console.log("getStaticProps");
     return {
@@ -18,9 +18,9 @@ export default class Test extends React.Component<Props, State> {
     };
   }
 
-  onChangeInput = (e: React.ChangeEvent<HTMLInputElement>)=> {
-    this.setState({inputval: e.target.value})
-  }
+  onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({ inputval: e.target.value });
+  };
 
   render() {
     return (
@@ -28,7 +28,11 @@ export default class Test extends React.Component<Props, State> {
         <h1>test</h1>
         <p>Prop.posts: {this.props.posts}</p>
         <p>state.inputval: {this.state.inputval}</p>
-        <input type="text" value={this.state.inputval} onChange={this.onChangeInput} />
+        <input
+          type="text"
+          value={this.state.inputval}
+          onChange={this.onChangeInput}
+        />
         <Link href="/">
           <a>home</a>
         </Link>
