@@ -13,6 +13,7 @@ export default class Test extends React.Component<Props, State> {
   constructor(prop) {
     super(prop)
     this.state =  { inputval: "__init" };
+    this.onChangeInput = this.onChangeInput.bind(this)
   }
 
   static async getInitialProps(context) {
@@ -22,7 +23,7 @@ export default class Test extends React.Component<Props, State> {
     };
   }
 
-  onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  onChangeInput (e: React.ChangeEvent<HTMLInputElement>)  {
     this.setState({ inputval: e.target.value });
   };
 
