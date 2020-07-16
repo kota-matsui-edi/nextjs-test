@@ -10,7 +10,11 @@ interface State {
 }
 
 export default class Test extends React.Component<Props, State> {
-  state = { inputval: "__init" };
+  constructor(prop) {
+    super(prop)
+    this.state =  { inputval: "__init" };
+  }
+
   static async getInitialProps(context) {
     console.log("getStaticProps");
     return {
